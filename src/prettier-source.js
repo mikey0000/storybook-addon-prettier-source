@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import reactElToString from 'react-element-to-jsx-string';
 import prettier from 'prettier/standalone';
-import parser from 'prettier/parser-babylon';
+import parser from 'prettier/parser-html';
 import SyntaxHighlighter, {
   registerLanguage
 } from 'react-syntax-highlighter/prism-light';
@@ -68,11 +68,11 @@ export class PrettierSource extends Component {
       sortProps: false,
       ...reactElToStringOpts
     })
-      .replace(/\n/g, '')
-      .replace(/>\s+</g, '><');
+      .replace(/\n/g, '');
+
 
     const prettified = prettier.format(stringifiedChildren, {
-      parser: 'babylon',
+      parser: 'html',
       plugins: [parser],
       ...prettierOpts
     });

@@ -13,6 +13,7 @@ export default {
     'react',
     'prettier/standalone',
     'prettier/parser-babylon',
+    'prettier/parser-html',
     'react-syntax-highlighter/prism-light',
     'react-syntax-highlighter/languages/prism/jsx',
     'react-syntax-highlighter/styles/prism/tomorrow',
@@ -22,8 +23,7 @@ export default {
     resolve(),
     postcss(),
     babel({
-      exclude: 'node_modules/**',
-      plugins: ['external-helpers']
+      exclude: 'node_modules/**'
     })
   ]
 };

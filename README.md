@@ -68,7 +68,7 @@ Defaults shown are merged with any options provided
 {
   prettier: {
     /* prettier options */
-    parser: 'babylon',
+    parser: 'babel',
     plugins: [require('prettier/parser-babylon')]
   },
   syntaxHighlighter: {
